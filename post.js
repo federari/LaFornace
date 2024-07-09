@@ -1,7 +1,7 @@
 function aggiungiArticolo() {
     var articolo = document.getElementById('articoloInput').value;
     if (articolo) {
-        fetch('https://serverlafornace.adaptable.app', {
+        fetch('https://serverlafornace.adaptable.app/api/articoli', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
