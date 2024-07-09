@@ -1,6 +1,6 @@
 
 function caricaArticoli() {
-    fetch('https://serverlafornace.adaptable.app')
+    fetch('https://serverlafornace.adaptable.app/api/articoli')
         .then(response => response.json())
         .then(articoli => {
             var bacheca = document.getElementById('bacheca');
@@ -14,18 +14,23 @@ function caricaArticoli() {
         });
 }
 function cancellaArticoli() {
-    fetch('https://serverlafornace.adaptable.app', {
-        method: 'DELETE'
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.message) {
-            alert(data.message);
-            caricaArticoli(); // Ricarica la bacheca per mostrare che è vuota
-        } else {
-            alert('Errore: ' + data.error);
-        }
-    });
+    var password = prompt("Inserisci Password")
+    if(password == "password"){
+        fetch('https://serverlafornace.adaptable.app/api/articoli', {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                caricaArticoli(); // Ricarica la bacheca per mostrare che è vuota
+            } else {
+                alert('Errore: ' + data.error);
+            }
+        });
+    }else{
+        alert("Password incorretta!")
+    }
 }
 // Carica gli articoli quando la pagina viene caricata
 window.onload = caricaArticoli;
