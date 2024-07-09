@@ -1,7 +1,7 @@
 function aggiungiArticolo() {
     var articolo = document.getElementById('articoloInput').value;
     if (articolo) {
-        fetch('http://localhost:3000', {
+        fetch('http://0.0.0.0:3000', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
