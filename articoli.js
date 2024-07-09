@@ -15,7 +15,7 @@ function caricaArticoli() {
 }
 function cancellaArticoli() {
     var password = prompt("Inserisci Password")
-    if(password == "password"){
+    if(password == "password123"){
         fetch('https://serverlafornace.adaptable.app/api/articoli', {
             method: 'DELETE'
         })

@@ -1,6 +1,6 @@
 function aggiungiArticolo() {
     var password = prompt("Inserisci Password")
-    if(password == "password"){
+    if(password == "password123"){
             var articolo = document.getElementById('articoloInput').value;
         if (articolo) {
             fetch('https://serverlafornace.adaptable.app/api/articoli', {
