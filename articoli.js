@@ -1,6 +1,6 @@
 
 function caricaArticoli() {
-    fetch('/api/articoli')
+    fetch('https://serverlafornace.adaptable.app')
         .then(response => response.json())
         .then(articoli => {
             var bacheca = document.getElementById('bacheca');
@@ -14,7 +14,7 @@ function caricaArticoli() {
         });
 }
 function cancellaArticoli() {
-    fetch('/api/articoli', {
+    fetch('https://serverlafornace.adaptable.app', {
         method: 'DELETE'
     })
     .then(response => response.json())
