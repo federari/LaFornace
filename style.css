@@ -432,3 +432,10 @@ img {
     font-weight: bold;
     border-radius: 10px;
 }
+.bottoni-centrali{
+    padding: 5px;
+    color:rgb(255, 255, 255);
+}
+.fc-nav-button--photo{
+    background-image: url(fotocamera.png);
+}
