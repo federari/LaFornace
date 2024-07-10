@@ -435,6 +435,7 @@ img {
 .bottoni-centrali{
     padding: 5px;
     color:rgb(255, 255, 255);
+    font-weight: 700;
 }
 .fc-nav-button--photo{
     background-image: url(fotocamera.png);
