@@ -405,7 +405,16 @@ img {
     background-image: url(carica.png);
 }
 .titolo-post{
-    padding-top: 100px;
+    font-size: 30px;
+    font-family: impact;
+}
+.testo-post{
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 25px;
 }
 .input{
     margin-top: 40px;
@@ -442,4 +451,9 @@ img {
 }
 .donazione{
     padding: 40px;
+}
+.img-articolo{
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 }
