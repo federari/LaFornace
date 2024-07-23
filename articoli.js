@@ -2,7 +2,7 @@
 function loadJSON(callback) {
     const xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://lafornaceserver.adaptable.app/data', true); // URL del tuo server su Adaptable
+    xobj.open('GET', 'https://your-app.adaptable.app/data', true); // URL del tuo server su Adaptable
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
             callback(JSON.parse(xobj.responseText));
