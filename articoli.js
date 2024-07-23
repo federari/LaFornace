@@ -1,36 +1,53 @@
+// Funzione per caricare i dati dal server
+function loadJSON(callback) {
+    const xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'https://lafornaceserver.adaptable.app/data', true); // URL del tuo server su Adaptable
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            callback(JSON.parse(xobj.responseText));
+        }
+    };
+    xobj.send(null);
+}
 
-function caricaArticoli() {
-    fetch('https://serverlafornace.adaptable.app/api/articoli')
-        .then(response => response.json())
-        .then(articoli => {
-            var bacheca = document.getElementById('bacheca');
-            bacheca.innerHTML = ''; // Pulisce il contenuto della bacheca
-            articoli.forEach(function(articolo) {
-                var p = document.createElement('div');
-                p.textContent = articolo;
-                p.className = 'listing-item'; // Aggiunge la classe 'articolo' a ogni paragrafo
-                bacheca.appendChild(p);
-            });
-        });
+// Funzione per creare il contenuto del div dinamicamente
+function createDiv(item) {
+    const div = document.createElement('div');
+    div.className = 'listing-item';
+
+    const link = document.createElement('a');
+    link.href = item.link;
+    const title = document.createElement('p');
+    title.className = 'titolo-post';
+    title.textContent = item.titolo;
+    link.appendChild(title);
+
+    const description = document.createElement('p');
+    description.className = 'testo-post';
+    description.textContent = item.descrizione;
+
+    const image = document.createElement('img');
+    image.src = item.immagine;
+    image.className = 'img-articolo';
+
+    div.appendChild(link);
+    div.appendChild(description);
+    div.appendChild(image);
+
+    return div;
 }
-function cancellaArticoli() {
-    var password = prompt("Inserisci Password")
-    if(password == "password123"){
-        fetch('https://serverlafornace.adaptable.app/api/articoli', {
-            method: 'DELETE'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.message) {
-                alert(data.message);
-                caricaArticoli(); // Ricarica la bacheca per mostrare che è vuota
-            } else {
-                alert('Errore: ' + data.error);
-            }
-        });
-    }else{
-        alert("Password incorretta!")
-    }
+
+// Funzione per inserire i div nel contenitore
+function populateDivs(data) {
+    const content = document.getElementById('content');
+    data.forEach(item => {
+        const div = createDiv(item);
+        content.appendChild(div);
+    });
 }
-// Carica gli articoli quando la pagina viene caricata
-window.onload = caricaArticoli;
+
+// Carica il JSON e popola i div quando la pagina è caricata
+document.addEventListener('DOMContentLoaded', function() {
+    loadJSON(populateDivs);
+});
