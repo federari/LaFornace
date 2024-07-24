@@ -41,10 +41,15 @@ function createDiv(item) {
 // Funzione per inserire i div nel contenitore
 function populateDivs(data) {
     const content = document.getElementById('content');
-    data.forEach(item => {
-        const div = createDiv(item);
-        content.appendChild(div);
-    });
+    
+    if (content) {
+        data.forEach(item => {
+            const div = createDiv(item);
+            content.appendChild(div);
+        });
+    } else {
+        console.error('Element with id "content" not found');
+    }
 }
 
 // Carica il JSON e popola i div quando la pagina è caricata
