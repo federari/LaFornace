@@ -40,6 +40,7 @@ body{
     background-color: #000000;
     -webkit-transition: background-color .3s ease;
     transition: background-color .3s ease;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block;
@@ -52,6 +53,7 @@ header {
     position: fixed;
     top: 0;
     background-color: #000000;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 }
 .titolo{
     margin: 0;
