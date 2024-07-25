@@ -1,12 +1,15 @@
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
-    if(prompt("inserisci Password") = "Password123"){
-        event.preventDefault();
+    event.preventDefault();
 
-        const titolo = document.getElementById('titolo').value;
-        const descrizione = document.getElementById('descrizione').value;
-        const link = document.getElementById('link').value;
-        const immagine = document.getElementById('immagine').value;
+    const titolo = document.getElementById('titolo').value;
+    const descrizione = document.getElementById('descrizione').value;
+    const link = document.getElementById('link').value;
+    const immagine = document.getElementById('immagine').value;
 
+    const password = prompt("Inserisci la password:");
+    const correctPassword = 'Password123';
+
+    if (password === correctPassword) {
         const data = {
             titolo: titolo,
             descrizione: descrizione,
@@ -17,7 +20,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
         fetch('https://serverlafornace.adaptable.app/upload', {
             method: 'POST',
             headers: {
-             'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         })
@@ -33,5 +36,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
             console.error('Errore:', error);
             alert('Errore nel caricamento dell\'articolo.');
         });
+    } else {
+        alert('Password errata. Impossibile caricare l\'articolo.');
     }
 });
