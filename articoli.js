@@ -10,6 +10,7 @@ function loadJSON(callback) {
     };
     xobj.send(null);
 }
+
 // Funzione per creare il contenuto del div dinamicamente
 function createDiv(item) {
     const div = document.createElement('div');
@@ -39,15 +40,15 @@ function createDiv(item) {
 
 // Funzione per inserire i div nel contenitore
 function populateDivs(data) {
-    const content = document.getElementById('content');
+    const container = document.getElementById('container');
     
-    if (content) {
+    if (container) {
         data.forEach(item => {
             const div = createDiv(item);
-            content.appendChild(div);
+            container.insertBefore(div, container.firstChild); // Inserisci il div all'inizio
         });
     } else {
-        console.error('Element with id "content" not found');
+        console.error('Element with id "container" not found');
     }
 }
 
