@@ -5,8 +5,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
     const descrizione = document.getElementById('descrizione').value;
     const link = document.getElementById('link').value;
     const immagine = document.getElementById('immagine').value;
-
-    const password = prompt("Inserisci la password:");
+    const password = document.getElementById('password').value;
 
     const data = {
         titolo: titolo,
