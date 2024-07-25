@@ -9,7 +9,7 @@ body{
     height: auto;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background: #fff;
+    background-image: url(https://i.pinimg.com/564x/16/4f/c9/164fc93c8fd9282d27e9df1180563fe3.jpg);
     color: #1d1d20;
     cursor: auto;
     margin: 0;
@@ -456,6 +456,21 @@ img {
 }
 .img-articolo{
     max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+}
+.chi-siamo{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+.listing-item {
+    flex: 1;
+}
+.affiancata-img {
+    max-width: 800px; /* Puoi regolare questa dimensione in base alle tue esigenze */
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 }
