@@ -111,11 +111,14 @@ a{
 
 }
 .fc-header-nav-container {
-    background-color: #000;
     background-color: #111;
     border-radius: 8px;
     -ms-flex-item-align: center;
     align-self: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 75px; /* Space between buttons */
 }
 .fc-modal {
     border-radius: 0;
@@ -447,6 +450,9 @@ img {
     padding: 5px;
     color:rgb(255, 255, 255);
     font-weight: 700;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%; /* Make button take up the full width of its container */
 }
 .fc-nav-button--photo{
     background-image: url(fotocamera.png);
@@ -474,3 +480,11 @@ img {
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 }
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px; /* Optional padding */
+}
+
