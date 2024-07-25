@@ -40,7 +40,7 @@ function createDiv(item) {
 
 // Funzione per inserire i div nel contenitore
 function populateDivs(data) {
-    const container = document.getElementById('container');
+    const container = document.getElementById('content');
     
     if (container) {
         data.forEach(item => {
