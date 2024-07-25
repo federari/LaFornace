@@ -7,36 +7,32 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
     const immagine = document.getElementById('immagine').value;
 
     const password = prompt("Inserisci la password:");
-    const correctPassword = 'Password123';
 
-    if (password === correctPassword) {
-        const data = {
-            titolo: titolo,
-            descrizione: descrizione,
-            link: link,
-            immagine: immagine
-        };
+    const data = {
+        titolo: titolo,
+        descrizione: descrizione,
+        link: link,
+        immagine: immagine,
+        password: password
+    };
 
-        fetch('https://serverlafornace.adaptable.app/upload', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Articolo caricato con successo!');
-            } else {
-                alert('Errore nel caricamento dell\'articolo.');
-            }
-        })
-        .catch((error) => {
-            console.error('Errore:', error);
-            alert('Errore nel caricamento dell\'articolo.');
-        });
-    } else {
-        alert('Password errata. Impossibile caricare l\'articolo.');
-    }
+    fetch('https://serverlafornace.adaptable.app/upload', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Articolo caricato con successo!');
+        } else {
+            alert('Errore nel caricamento dell\'articolo: ' + data.error);
+        }
+    })
+    .catch((error) => {
+        console.error('Errore:', error);
+        alert('Errore nel caricamento dell\'articolo.');
+    });
 });
