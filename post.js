@@ -6,12 +6,16 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
     const link = document.getElementById('link').value;
     const immagine = document.getElementById('immagine').value;
     const password = document.getElementById('password').value;
+    const giornata = new Date()
+    const giornataformatt = giornata.getFullYear()*1000000 + giornata.getMonth()*10000 + giornata.getDate()*100 + giornata.getHours()
+    console.log(giornataformatt)
 
     const data = {
         titolo: titolo,
         descrizione: descrizione,
         link: link,
         immagine: immagine,
+        giornata: giornataformatt,
         password: password
     };
 
