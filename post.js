@@ -1,5 +1,7 @@
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+    const password = prompt("inserisci Password")
+    if(password = "Password123"){
+        event.preventDefault();
 
     const titolo = document.getElementById('titolo').value;
     const descrizione = document.getElementById('descrizione').value;
@@ -32,4 +34,5 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
         console.error('Errore:', error);
         alert('Errore nel caricamento dell\'articolo.');
     });
+    }
 });
