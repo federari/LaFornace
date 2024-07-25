@@ -10,7 +10,6 @@ function loadJSON(callback) {
     };
     xobj.send(null);
 }
-
 // Funzione per creare il contenuto del div dinamicamente
 function createDiv(item) {
     const div = document.createElement('div');
