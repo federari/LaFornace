@@ -128,11 +128,26 @@
 
 <div class="main full">
     <span class="titolo titolo">CREA UN ARTICOLO</span>
-    <div class="input">
-        <script src="post.js"></script>
-        <textarea class="canva" type="text" id="articoloInput" name="post"></textarea>
-    </div>
-    <button onclick="aggiungiArticolo()">Invia</button>
+    <form id="uploadForm">
+      <div class="listing-item">
+        <label for="titolo">Titolo:</label>
+        <input type="text" id="titolo" name="titolo" required>
+      </div><br>
+      <div class="listing-item">
+        <label for="descrizione">Descrizione:</label>
+        <input type="text" id="descrizione" name="descrizione" required>
+      </div><br>
+      <div class="listing-item">
+        <label for="link">Link:</label>
+        <input type="text" id="link" name="link" required>
+      </div><br>
+      <div class="listing-item">
+        <label for="immagine">Immagine URL:</label>
+        <input type="text" id="immagine" name="immagine" required>
+      </div><br>
+      <button class="cancella" type="submit">Carica Articolo</button>
+  </form>
+  <script src="post.js"></script>
 </div>
 
 </div>
