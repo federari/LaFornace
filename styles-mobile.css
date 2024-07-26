@@ -478,6 +478,7 @@ img {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+    object-fit: contain;
 }
 .center-images{
     max-width: 100%;
