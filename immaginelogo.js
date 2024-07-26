@@ -17,3 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update image source when the window is resized
   window.addEventListener('resize', updateImageSource);
 });
+function redirect(){
+  location.href="https://lafornace.netlify.app/cerca";
+}

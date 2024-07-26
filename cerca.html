@@ -2,7 +2,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="loghetto.ico" />
     <link href="style-desktop.css" rel="stylesheet" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="styles-mobile.css" media="screen and (max-width: 768px)">
-    <title>LaFornace | Fai Una Donazione</title>
+    <title>LaFornace | Cerca</title>
     <meta name="keywords" content="grid controllers, grooveboxes, synths, synthesisers, keys, keyboards">
     <meta name="description" content="We’ve always been on a mission to help artists sculpt and perform sound; to help electronic music makers lose themselves on an endless music-making journey.">
     <meta name="platform" content="bigcommerce.stencil">
@@ -95,7 +95,7 @@
   <ul class="fc-navUser-section">
     <li class="fc-navUser-item">
       <button class="fc-nav-button fc-nav-button--search" type="button" id="quick-search-expand"
-        data-search="quickSearch" aria-controls="quickSearch" aria-label="Search" onclick="redirect()"></button>
+        data-search="quickSearch" aria-controls="quickSearch" aria-label="Search"  onclick="redirect()"></button>
     </li>
     <li class="fc-navUser-item">
       <a class="fc-nav-button loghetto" 
@@ -125,12 +125,15 @@
 <div class="fc-container">
 <div class="main full">
   <div class="titolo">
-    <span>Fai Una Donazione</span> 
+    <span>Cerca un articolo</span> 
   </div>
   <div class="listing-item">
-    <p class="paragrafo donazione">
-      Accettiamo da chiunque
-    </p>
+    <label>
+      <form>
+        <input type="text" size="50px" required><br>
+        <button type="submit" class="cancella">Cerca</button>
+      </form>
+    </label>
   </div>
 
 

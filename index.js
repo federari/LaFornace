@@ -28,8 +28,6 @@ setInterval (function(){
 } , 15000);
 
 // Link a cui andare in un'altra pagina se necessario
-function redirect(){
-  location.href="https://www.youtube.com";
-}
+
 
 
