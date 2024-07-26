@@ -42,7 +42,7 @@ function populateDivs(data) {
 
 async function searchArticles() {
   const query = document.getElementById('searchInput').value;
-  const response = await fetch('http://serverlafornace.adaptable.app/search', {
+  const response = await fetch('http://serverlafornace.adaptable.app', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
