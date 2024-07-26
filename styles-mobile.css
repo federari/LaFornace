@@ -527,3 +527,6 @@ img {
     border: none; /* Rimuovi bordo */
     cursor: pointer;
 }
+.cerca{
+    padding-bottom: 20px;
+}
