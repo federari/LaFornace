@@ -68,7 +68,7 @@ header {
     font-size: 15px;
 }
 .immagine-logo{
-    width: 150px;
+    max-height: 100px;
 }
 html {
     position: relative;
