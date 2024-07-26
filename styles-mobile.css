@@ -468,6 +468,7 @@ img {
     align-items: center;
     text-align: center;
     margin: auto;
+    flex-direction: column;
 }
 .listing-item {
     flex: 1;
