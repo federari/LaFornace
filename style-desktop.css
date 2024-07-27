@@ -490,3 +490,11 @@ img {
 .cerca{
     padding-bottom: 20px;
 }
+.photogallery{
+    max-width: 800px; /* Puoi regolare questa dimensione in base alle tue esigenze */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+    margin: auto;
+    padding: 10px;
+}
