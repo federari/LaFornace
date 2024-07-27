@@ -50,7 +50,7 @@ function populateDivs(data) {
 async function searchArticles() {
 const query = document.getElementById('searchInput').value;
 try {
-  const response = await fetch('http://localhost:3000/search', {
+  const response = await fetch('https://serverlafornace.adaptable.app/search', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
