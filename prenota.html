@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html class="no-js page-type-default" lang="en"><head>
+    <link rel="shortcut icon" type="image/x-icon" href="loghetto.ico" />
+    <link href="style-desktop.css" rel="stylesheet" media="screen and (min-width: 769px)">
+    <link rel="stylesheet" href="styles-mobile.css" media="screen and (max-width: 768px)">
+    <title>LaFornace | Prenota un Giorno</title>
+    <meta name="keywords" content="grid controllers, grooveboxes, synths, synthesisers, keys, keyboards">
+    <meta name="description" content="We’ve always been on a mission to help artists sculpt and perform sound; to help electronic music makers lose themselves on an endless music-making journey.">
+    <meta name="platform" content="bigcommerce.stencil">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css" media="screen, print">
+        @font-face {
+            font-family: "TT Norms Pro Bold";
+            src: url("https://cdn11.bigcommerce.com/s-itgb7ssiy1/content/TT%2520Norms%2520Pro%2520Bold.ttf");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "TT Norms Pro Demi-Bold";
+            src: url("https://cdn11.bigcommerce.com/s-itgb7ssiy1/content/TT%2520Norms%2520Pro%2520DemiBold.ttf");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "TT Norms Pro Medium";
+            src: url("https://cdn11.bigcommerce.com/s-itgb7ssiy1/content/TT%2520Norms%2520Pro%2520Medium.ttf");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "TT Norms Pro Regular";
+            src: url("https://cdn11.bigcommerce.com/s-itgb7ssiy1/content/TT%2520Norms%2520Pro%2520Regular.ttf");
+            font-display: swap;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body class=" fc-home">
+
+  <header
+  class="fc-header fc-container"
+  role="banner"
+  id="myHeader"
+>
+  <div class="fc-header-flexTop">
+    <div class="fc-header-logo
+    
+    
+    
+    
+    
+    
+    
+    
+    ">
+      <a href="https://lafornace.netlify.app" class="fc-header-logo__link" data-fc-header-logo-link>
+     <div>
+    <img
+      class="immagine-logo"
+      src="Logo_fornace_bianco.png"
+      alt="LaFornace"
+      title="LaFornace"
+      id="imglogo"
+    />
+    <script src="immaginelogo.js"></script>
+  </div>
+   </a>
+    </div>
+    <div class="container button-grid"> 
+    <div class="fc-header-nav-container" id="menu" data-menu>
+      <div>
+        <a href="chisiamo">
+          <button class="bottoni-centrali">CHI SIAMO</button>
+        </a>
+      </div>
+    </div>
+    <div class="fc-header-nav-container" id="menu" data-menu>
+      <div>
+        <a href="lastoria">
+          <button class="bottoni-centrali">LA STORIA</button>
+        </a>
+      </div>
+  </div> 
+  <div class="fc-header-nav-container" id="menu" data-menu>
+    <div>
+      <a href="photogallery">
+      <button class="bottoni-centrali">PHOTO GALLERY</button>
+      </a>
+    </div>
+  </div>
+  <div class="fc-header-nav-container" id="menu" data-menu>
+    <div>
+      <a href="faiunadonazione">
+        <button class="bottoni-centrali">FAI UNA DONAZIONE</button>
+      </a>
+    </div>
+  </div>
+    </div>
+<nav class="fc-navUser">
+  <ul class="fc-navUser-section">
+    <li class="fc-navUser-item">
+      <button class="fc-nav-button fc-nav-button--search" type="button" id="quick-search-expand"
+        data-search="quickSearch" aria-controls="quickSearch" aria-label="Search" onclick="redirect()"></button>
+    </li>
+    <li class="fc-navUser-item">
+      <a class="fc-nav-button loghetto" 
+         href="articoli">
+      </a>
+    </li>
+
+    <li class="fc-navUser-item">
+      <a class="fc-nav-button fc-nav-button--post" href="post"
+        aria-label="Sign in">
+      </a>
+    </li>
+    <li class="fc-navUser-item">
+      <a class="fc-nav-button fc-nav-button--photo" data-item-minicart data-dropdown="cart-preview-dropdown"
+        data-options="align:right" href="photogallery" aria-label="cart.fc-nav_aria_label">
+        <span class="fc-navUser-item-cartLabel"></span>
+        <span class="fc-countPill fc-cart-quantity"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+  </div>
+</header>
+<script src="index.js"></script>
+<script src="prenota.js"></script>
+<div data-content-region="header_bottom"></div>
+    <main class="fc-body" id="main-content" role="main" data-currency-code="EUR">
+<div class="fc-container">
+<div class="main full">
+  <div class="titolo">
+    <span>Prenota un Giorno</span> 
+  </div>
+  <div class="prenota-grid">
+      <div class="linea-prenota">
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(1)">
+          <div class="prenota-top">
+            1
+          </div>
+          <div class="prenota-bottom" id="1"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(2)">
+          <div class="prenota-top">
+            2
+          </div>
+          <div class="prenota-bottom" id="2"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(3)">
+          <div class="prenota-top">
+            3
+          </div>
+          <div class="prenota-bottom" id="3"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(4)">
+          <div class="prenota-top">
+            4
+          </div>
+          <div class="prenota-bottom" id="4"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(5)">
+          <div class="prenota-top">
+            5
+          </div>
+          <div class="prenota-bottom" id="5"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(6)">
+          <div class="prenota-top">
+            6
+          </div>
+          <div class="prenota-bottom" id="6"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(7)">
+          <div class="prenota-top">
+            7
+          </div>
+          <div class="prenota-bottom" id="7"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(8)">
+          <div class="prenota-top">
+            8
+          </div>
+          <div class="prenota-bottom" id="8"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(9)">
+          <div class="prenota-top">
+            9
+          </div>
+          <div class="prenota-bottom" id="9"></div>
+        </button>
+      </div>
+      <div class="prenota">
+        <button class="bottone-prenota" onclick="prenota(10)">
+          <div class="prenota-top">
+            10
+          </div>
+          <div class="prenota-bottom" id="10"></div>
+        </button>
+      </div>
+      </div>
+      <div class="linea-prenota">
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(11)">
+            <div class="prenota-top">
+              11
+            </div>
+            <div class="prenota-bottom" id="11"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(12)">
+            <div class="prenota-top">
+              12
+            </div>
+            <div class="prenota-bottom" id="12"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(13)">
+            <div class="prenota-top">
+              13
+            </div>
+            <div class="prenota-bottom" id="13"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(14)">
+            <div class="prenota-top">
+              14
+            </div>
+            <div class="prenota-bottom" id="14"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(15)">
+            <div class="prenota-top">
+              15
+            </div>
+            <div class="prenota-bottom" id="15"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(16)">
+            <div class="prenota-top">
+              16
+            </div>
+            <div class="prenota-bottom" id="16"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(17)">
+            <div class="prenota-top">
+              17
+            </div>
+            <div class="prenota-bottom" id="17"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(18)">
+            <div class="prenota-top">
+              18
+            </div>
+            <div class="prenota-bottom" id="18"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(19)">
+            <div class="prenota-top">
+              19
+            </div>
+            <div class="prenota-bottom" id="19"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(20)">
+            <div class="prenota-top">
+              20
+            </div>
+            <div class="prenota-bottom" id="20"></div>
+          </button>
+        </div>
+      </div>
+      <div class="linea-prenota">
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(21)">
+            <div class="prenota-top">
+              21
+            </div>
+            <div class="prenota-bottom" id="21"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(22)">
+            <div class="prenota-top">
+              22
+            </div>
+            <div class="prenota-bottom" id="22"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(23)">
+            <div class="prenota-top">
+              23
+            </div>
+            <div class="prenota-bottom" id="23"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(24)">
+            <div class="prenota-top">
+              24
+            </div>
+            <div class="prenota-bottom" id="24"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(25)">
+            <div class="prenota-top">
+              25
+            </div>
+            <div class="prenota-bottom" id="25"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(26)">
+            <div class="prenota-top">
+              26
+            </div>
+            <div class="prenota-bottom" id="26"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(27)">
+            <div class="prenota-top">
+              27
+            </div>
+            <div class="prenota-bottom" id="27"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(28)">
+            <div class="prenota-top">
+              28
+            </div>
+            <div class="prenota-bottom" id="28"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(29)">
+            <div class="prenota-top">
+              29
+            </div>
+            <div class="prenota-bottom" id="29"></div>
+          </button>
+        </div>
+        <div class="prenota">
+          <button class="bottone-prenota" onclick="prenota(30)">
+            <div class="prenota-top">
+              30
+            </div>
+            <div class="prenota-bottom" id="30"></div>
+          </button>
+      </div>
+      </div>
+      <button class="cancella">Prenota</button>
+      
+      
+
+    </div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+</div>
+</main>
+<footer class="fc-footer fc-container" role="contentinfo">
+  <h2 class="fc-footer-title-sr-only">Footer Start</h2>
+  <div class="fc-footer__content">
+    <section class="fc-footer-info">
+      <article class="fc-footer-info-col" data-section-type="fc-footer-webPages">
+        <div data-content-region="footer-products--global"><div data-layout-id="5900fa93-6061-453a-afd0-73d00eab45a5"><div data-sub-layout-container="7e5dbfb2-1bf5-49b3-bb3f-9bf07dbebaba" data-layout-name="Layout">
+  <div data-sub-layout="72521776-2b91-4031-93cc-1bffd68d6891">
+    <div data-widget-id="79bf9039-d45d-441a-9527-a8a2a1f6b4c5" data-placement-id="f80bb5ab-9589-4181-bbeb-34d0f78d817f" data-placement-status="ACTIVE"><h4 style="color: white; font-size: 16px; line-height: inherit;">I Nostri Contatti</h4>
+</div><div data-widget-id="166b743f-5ee5-4ac8-90b4-d6750a2bd91c" data-placement-id="f073f7fd-8000-414f-bfef-2982e4a32c2a" data-placement-status="ACTIVE"><div class="fc-footer-navigation-wrapper" data-id="166b743f-5ee5-4ac8-90b4-d6750a2bd91c">
+    <div class="fc-footer-navigation">
+        <ul class="fc-footer-navigation__list">
+            <li class="fc-footer-navigation__item">
+                        <a href="https://www.instagram.com/fede_rari__/" class="fc-footer-navigation__link ">
+                            Ferrari Federico (sviluppatore)
+                        </a>
+            </li>
+            <li class="fc-footer-navigation__item">
+                        <a href="/launchkey" class="fc-footer-navigation__link ">
+                            Launchkey
+                        </a>
+            </li>
+            <li class="fc-footer-navigation__item">
+                        <a href="/launch" class="fc-footer-navigation__link ">
+                            Launch
+                        </a>
+            </li>
+            <li class="fc-footer-navigation__item">
+                        <a href="/circuit" class="fc-footer-navigation__link ">
+                            Circuit
+                        </a>
+            </li>
+            <li class="fc-footer-navigation__item">
+                        <a href="/products/summit" class="fc-footer-navigation__link ">
+                            Summit
+                        </a>
+            </li>
+            <li class="fc-footer-navigation__item">
+                        <a href="/products/peak" class="fc-footer-navigation__link ">
+                            Peak
+                        </a>
+            </li>
+            <li class="fc-footer-navigation__item">
+                        <a href="/products/bass-station-ii" class="fc-footer-navigation__link ">
+                            Bass Station II
+                        </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+  </div>
+</div></div></div>
+      </article>
+
+      <article class="fc-footer-info-col" data-section-type="fc-footer-categories">
+        <div style="margin: auto;" data-content-region="footer-information--global"><div data-layout-id="bc9708a2-6724-43b5-bafa-1542da7d8120">
+<div data-sub-layout-container="6abcc1f6-05fe-42e6-9488-e609bb261966" data-layout-name="Layout">
+
+  <div data-sub-layout="48bfcf44-450b-448d-b6f7-22a681bd30d4">
+
+    <div data-widget-id="e9fad036-ef5f-48fc-9126-c9cc2dfc1d90" data-placement-id="8678ecae-12f5-47ae-8f56-86e014ab05e7" data-placement-status="ACTIVE"><div class="fc-footer-navigation-wrapper" data-id="e9fad036-ef5f-48fc-9126-c9cc2dfc1d90">
+    <div class="fc-footer-navigation">
+        <ul class="fc-footer-navigation__list">
+            <li class="fc-footer-navigation__item">
+                        <a class="fc-footer-navigation__link " target="_blank">
+                            Da anni la fornace si impegna nella rinascita del paese Gramignazzo chiunque può aiutare.
+                        </a>
+            </li>
+            <li class="fc-footer-navigation__item">
+                        <a href="/faiunadonazione" class="fc-footer-navigation__link ">
+                            Scopri di più
+                        </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+  </div>
+</div></div></div>
+      </article>
+
+    </section>
+
+    <section class="fc-footer-info fc-trustpilot">
+      <article class="fc-footer-trustpilot" data-section-type="fc-reviews">
+        <div class="fc-header-logo-image-container">
+            <a href="https://lafornace.netlify.app" class="fc-header-logo__link" data-fc-header-logo-link>
+     <div class="fc-header-logo-image-container">
+    <img
+      class="immagine-logo"
+      src="Logo_fornace_bianco.png"
+      srcset="Logo_fornace_bianco.png"
+      alt="LaFornace"
+      title="LaFornace"
+    />
+  </div>
+   </a>
+        </div>
+        <!-- TrustBox widget - Mini -->
+        <div class="trustpilot-widget" data-locale="en-GB"
+          data-template-id="53aa8807dec7e10d38f59f32"
+          data-businessunit-id="631f0266baabaf733872ad4e"
+          data-style-height="150px
+          "
+          data-style-width="100%" data-theme="dark" data-text-color="#ffffff">
+          <a href="" target="_blank"
+            rel="noopener">Noi</a>
+        </div>
+        <!-- End TrustBox widget -->
+      </article>
+    </section>
+    <section class="fc-footer-info fc-region-wrapper">
+    </section>
+    <div class="fc-footer-copyright">
+      <p style="color:aliceblue;">
+        2024 &copy; Focusrite Audio Engineering Limited. All rights
+        reserved.
+      </p>
+    </div>
+  </div>
+  <div data-content-region="ssl_site_seal--global"></div>
+</footer>
+
+
+
+</body></html>

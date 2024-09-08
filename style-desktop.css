@@ -508,3 +508,36 @@ img {
     flex: 1 1 calc(33.33% - 10px); /* Tre immagini per riga */
     margin: 5px;
 }
+.linea-prenota{
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 550px;
+    margin-right: 550px;
+    margin-bottom: 20px;
+}
+.prenota{
+    margin: auto;
+    border-radius: 5px;
+    border-color: black;
+    border-width: medium;
+    border-style: solid;
+}
+.prenota-top{
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.prenota-bottom{
+    padding-bottom: 28px;
+    background-color: rgb(214, 56, 56);
+}
+.bottone-prenota{
+    padding-block: 0px;
+    padding-inline: 0px;
+}
+.prenota-grid{
+    margin-bottom: 80px;
+    margin-top: 40px;
+}
