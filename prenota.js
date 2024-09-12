@@ -1,8 +1,6 @@
 var n = 0
 var g
 var giorni = []
-const nome = ""
-const cellulare = 0
 
   // Aggiungi un event listener per ogni bottone
 function prenota(g) {
@@ -32,8 +30,8 @@ function prenota(g) {
 
 function invia(){
 
-  nome = prompt("Inserire un nome")
-  cellulare = prompt("inserire un numero di telefono")
+  const nome = prompt("Inserire un nome")
+  const cellulare = prompt("inserire un numero di telefono")
     const data = {
       nome: nome,
       cellulare: cellulare,
