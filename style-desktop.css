@@ -435,7 +435,6 @@ img {
 .immagini_body{
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
     border-radius: 4px;
-    max-width: 1280px;
     margin: 30px auto 35px;
     max-height: 853.33
 }
