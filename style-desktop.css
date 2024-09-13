@@ -436,7 +436,7 @@ img {
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
     border-radius: 4px;
     margin: 30px auto 35px;
-    max-height: 853.33
+    max-height: 600px;
 }
 .cancella{
     padding: 10px;
