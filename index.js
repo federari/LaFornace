@@ -25,7 +25,7 @@ setInterval (function(){
   }
   document.getElementById("center_image").src = imageSources[index];
   index++;
-} , 15000);
+} , 8000);
 
 // Link a cui andare in un'altra pagina se necessario
 
