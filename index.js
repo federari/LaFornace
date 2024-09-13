@@ -16,7 +16,7 @@ function myFunction() {
   }
 }
 
-var imageSources = ["https://fai-platform.imgix.net/uploads/897d0abd-3216-4078-bf8a-2acb474b7bbe.jpg?crop=fit&w=1440&h=800&auto=format,compress", "https://digilander.libero.it/elephoto/2007.06.15_a__bell_1.JPG", "https://image.jimcdn.com/app/cms/image/transf/none/path/sa1093cbe9aed8aa9/image/i6cceb00c75f15990/version/1648300000/image.jpg"]
+var imageSources = ["foto/IMG_0234.jpg", "foto/IMG_0263.jpg", "foto/IMG_0238.jpg", "foto/IMG_0242.jpg", "foto/IMG_0244.jpg", "foto/IMG_0247.jpg", "foto/IMG_0249.jpg"]
 
 var index = 0;
 setInterval (function(){
