@@ -1,6 +1,171 @@
 var n = 0
 var g
 var giorni = []
+const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+var spanmese = document.getElementById("mese");
+var spananno = document.getElementById("anno");
+var datadioggi = new Date();
+var numero_mese = datadioggi.getMonth(); // Restituisce un numero da 0 a 11
+var numero_anno = datadioggi.getFullYear()
+
+// Imposta il contenuto del div
+spanmese.innerHTML = mesi[numero_mese];
+spananno.innerHTML = numero_anno;
+document.getElementById("giorno31").style.display = "block"
+  document.getElementById("giorno30").style.display = "block"
+  document.getElementById("giorno29").style.display = "block"
+  if(numero_mese == 3){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 5){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 8){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 10){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 1){
+    document.getElementById("giorno31").style.display = "none"
+    document.getElementById("giorno30").style.display = "none"
+    if(numero_anno%4 != 0){
+
+    } else if(numero_anno%100 != 0){
+      document.getElementById("giorno29").style.display = "none"
+    } else{
+      if(numero_anno%400 == 0){
+      } else{
+        document.getElementById("giorno29").style.display = "none"
+      }
+    }
+  }
+
+
+
+
+
+
+function sinistraMese() {
+  numero_mese--
+  if(numero_mese < 0){
+    numero_mese = 11
+  }
+  spanmese.innerHTML = mesi[numero_mese];
+  document.getElementById("giorno31").style.display = "block"
+  document.getElementById("giorno30").style.display = "block"
+  document.getElementById("giorno29").style.display = "block"
+  if(numero_mese == 3){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 5){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 8){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 10){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 1){
+    document.getElementById("giorno31").style.display = "none"
+    document.getElementById("giorno30").style.display = "none"
+    if(numero_anno%4 != 0){
+      
+    } else if(numero_anno%100 != 0){
+      document.getElementById("giorno29").style.display = "none"
+    } else{
+      if(numero_anno%400 == 0){
+      } else{
+        document.getElementById("giorno29").style.display = "none"
+      }
+    }
+  }
+}
+function destraMese() {
+  numero_mese++
+  if(numero_mese > 11){
+    numero_mese = 0
+  }
+  spanmese.innerHTML = mesi[numero_mese];
+  document.getElementById("giorno31").style.display = "block"
+  document.getElementById("giorno30").style.display = "block"
+  document.getElementById("giorno29").style.display = "block"
+  if(numero_mese == 3){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 5){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 8){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 10){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 1){
+    document.getElementById("giorno31").style.display = "none"
+    document.getElementById("giorno30").style.display = "none"
+    if(numero_anno%4 != 0){
+      
+    } else if(numero_anno%100 != 0){
+      document.getElementById("giorno29").style.display = "none"
+    } else{
+      if(numero_anno%400 == 0){
+      } else{
+        document.getElementById("giorno29").style.display = "none"
+      }
+    }
+  }
+}
+
+function sinistraAnno() {
+  numero_anno--
+  spananno.innerHTML = numero_anno;
+  document.getElementById("giorno31").style.display = "block"
+  document.getElementById("giorno30").style.display = "block"
+  document.getElementById("giorno29").style.display = "block"
+  if(numero_mese == 3){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 5){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 8){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 10){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 1){
+    document.getElementById("giorno31").style.display = "none"
+    document.getElementById("giorno30").style.display = "none"
+    if(numero_anno%4 != 0){
+      
+    } else if(numero_anno%100 != 0){
+      document.getElementById("giorno29").style.display = "none"
+    } else{
+      if(numero_anno%400 == 0){
+      } else{
+        document.getElementById("giorno29").style.display = "none"
+      }
+    }
+  }
+}
+function destraAnno() {
+  numero_anno++
+  spananno.innerHTML = numero_anno;
+  document.getElementById("giorno31").style.display = "block"
+  document.getElementById("giorno30").style.display = "block"
+  document.getElementById("giorno29").style.display = "block"
+  if(numero_mese == 3){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 5){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 8){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 10){
+    document.getElementById("giorno31").style.display = "none"
+  } else if(numero_mese == 1){
+    document.getElementById("giorno31").style.display = "none"
+    document.getElementById("giorno30").style.display = "none"
+    if(numero_anno%4 != 0){
+      
+    } else if(numero_anno%100 != 0){
+      document.getElementById("giorno29").style.display = "none"
+    } else{
+      if(numero_anno%400 == 0){
+      } else{
+        document.getElementById("giorno29").style.display = "none"
+      }
+    }
+  }
+}
+
 
   // Aggiungi un event listener per ogni bottone
 function prenota(g) {
@@ -31,11 +196,27 @@ function prenota(g) {
 function invia(){
 
   const nome = prompt("Inserire un nome")
+  if(nome === null){
+    alert("Operazione Annullata")
+    return
+  } else if(nome === ""){
+    alert("Fornire un nome")
+    return
+  }
   const cellulare = prompt("inserire un numero di telefono")
+  if(cellulare === null){
+    alert("Operazione Annullata")
+    return
+  } else if(cellulare === ""){
+    alert("Fornire un numero di telefono")
+    return
+  }
     const data = {
       nome: nome,
       cellulare: cellulare,
       giorni: giorni,
+      mese: numero_mese + 1,
+      anno: numero_anno
   };
 
     fetch('https://serverlafornace.adaptable.app/prenota', {
@@ -58,4 +239,58 @@ function invia(){
       alert("Errore nel caricamento della prenotazione, Chiama l'assistenza");
   });
 };
+function loadJSON(callback) {
+  const xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open('GET', 'https://serverlafornace.adaptable.app/prenotazioni', true); // URL del tuo server su Adaptable
+  xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == 200) { // Cambiato 'status' in 200 senza virgolette
+          callback(JSON.parse(xobj.responseText));
+      }
+  };
+  xobj.send(null);
+}
+
+function caricaDati(callback) {
+  loadJSON(function(response) {
+      // response è l'oggetto JSON ricevuto dal server
+      const datiRicevuti = response;
+      
+      // Supponiamo che la risposta contenga una lista di prenotazioni
+      // e che ogni prenotazione abbia i campi 'nome', 'cellulare', 'giorni' e 'mese'
+      // Iteriamo su tutti gli elementi della lista
+      if (datiRicevuti.length > 0) {
+          for (var l = 0; l < datiRicevuti.length; l++) { // Inizializza l a 0
+              let Elemento = datiRicevuti[l];
+              let nomesrv = Elemento.nome;
+              let cellularesrv = Elemento.cellulare;
+              let giornisrv = Elemento.giorni;
+              let mesesrv = Elemento.mese;
+              let annosrv = Elemento.anno;
+              
+              if (annosrv === numero_anno) {
+                  if (mesesrv === numero_mese + 1) {
+                      for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
+                          for (var a = 0; a < giornisrv.length; a++) { 
+                              if (giornisrv[a] === f) {
+                                  document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+
+          // Esegui la callback passata con i dati necessari
+          callback();
+      }
+  });
+}
+
+function ottieni() {
+  // Chiama la funzione per caricare e processare i dati
+  caricaDati(function() {
+      // La callback può essere vuota, a meno che tu non abbia bisogno di eseguire ulteriori operazioni
+  });
+}
 

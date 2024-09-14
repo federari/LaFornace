@@ -27,7 +27,7 @@ setInterval (function(){
   index++;
 } , 8000);
 
-// Link a cui andare in un'altra pagina se necessario
+
 
 
 

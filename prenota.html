@@ -121,13 +121,22 @@
   </div>
 </header>
 <script src="index.js"></script>
-<script src="prenota.js"></script>
 <div data-content-region="header_bottom"></div>
     <main class="fc-body" id="main-content" role="main" data-currency-code="EUR">
 <div class="fc-container">
 <div class="main full">
   <div class="titolo">
     <span>Prenota un Giorno</span> 
+  </div>
+  <div>
+    <button onclick="sinistraAnno()"><img src="freccia_sinistra.png"></button>
+    <span class="mese" id="anno"></span>
+    <button onclick="destraAnno()"><img src="freccia_destra.png"></button>
+  </div>
+  <div>
+    <button onclick="sinistraMese()"><img src="freccia_sinistra.png"></button>
+    <span class="mese" id="mese"></span>
+    <button onclick="destraMese()"><img src="freccia_destra.png"></button>
   </div>
   <div class="prenota-grid">
       <div class="linea-prenota">
@@ -351,7 +360,7 @@
             <div class="prenota-bottom" id="27"></div>
           </button>
         </div>
-        <div class="prenota">
+        <div class="prenota" id="giorno28">
           <button class="bottone-prenota" onclick="prenota(28)">
             <div class="prenota-top">
               28
@@ -359,7 +368,7 @@
             <div class="prenota-bottom" id="28"></div>
           </button>
         </div>
-        <div class="prenota">
+        <div class="prenota" id="giorno29">
           <button class="bottone-prenota" onclick="prenota(29)">
             <div class="prenota-top">
               29
@@ -367,7 +376,7 @@
             <div class="prenota-bottom" id="29"></div>
           </button>
         </div>
-        <div class="prenota">
+        <div class="prenota" id="giorno30">
           <button class="bottone-prenota" onclick="prenota(30)">
             <div class="prenota-top">
               30
@@ -375,7 +384,7 @@
             <div class="prenota-bottom" id="30"></div>
           </button>
       </div>
-      <div class="prenota">
+      <div class="prenota" id="giorno31">
         <button class="bottone-prenota" onclick="prenota(31)">
           <div class="prenota-top">
             31
@@ -384,7 +393,8 @@
         </button>
     </div>
       </div>
-      <button onclick="invia()" class="cancella">Prenota</button>
+      <button onclick="invia()" class="cancella">PRENOTA</button>
+      <script src="prenota.js"></script>
       
       
 
