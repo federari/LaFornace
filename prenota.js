@@ -43,6 +43,12 @@ document.getElementById("giorno31").style.display = "block"
 
 
 function sinistraMese() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
   numero_mese--
   if(numero_mese < 0){
     numero_mese = 11
@@ -73,8 +79,15 @@ function sinistraMese() {
       }
     }
   }
+  ottieniDefault()
 }
 function destraMese() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
   numero_mese++
   if(numero_mese > 11){
     numero_mese = 0
@@ -105,9 +118,16 @@ function destraMese() {
       }
     }
   }
+  ottieniDefault()
 }
 
 function sinistraAnno() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
   numero_anno--
   spananno.innerHTML = numero_anno;
   document.getElementById("giorno31").style.display = "block"
@@ -135,8 +155,16 @@ function sinistraAnno() {
       }
     }
   }
+  ottieniDefault()
 }
 function destraAnno() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
+
   numero_anno++
   spananno.innerHTML = numero_anno;
   document.getElementById("giorno31").style.display = "block"
@@ -164,6 +192,7 @@ function destraAnno() {
       }
     }
   }
+  ottieniDefault()
 }
 
 
@@ -256,9 +285,14 @@ function caricaDati(callback) {
       // response è l'oggetto JSON ricevuto dal server
       const datiRicevuti = response;
       
-      // Supponiamo che la risposta contenga una lista di prenotazioni
-      // e che ogni prenotazione abbia i campi 'nome', 'cellulare', 'giorni' e 'mese'
-      // Iteriamo su tutti gli elementi della lista
+      // Esegui la callback passata con i dati necessari
+      callback(datiRicevuti);
+  });
+}
+
+function ottieni() {
+  // Chiama la funzione per caricare e processare i dati
+  caricaDati(function(datiRicevuti) { // Passa 'datiRicevuti' come parametro
       if (datiRicevuti.length > 0) {
           for (var l = 0; l < datiRicevuti.length; l++) { // Inizializza l a 0
               let Elemento = datiRicevuti[l];
@@ -280,17 +314,37 @@ function caricaDati(callback) {
                   }
               }
           }
-
-          // Esegui la callback passata con i dati necessari
-          callback();
       }
   });
 }
 
-function ottieni() {
-  // Chiama la funzione per caricare e processare i dati
-  caricaDati(function() {
-      // La callback può essere vuota, a meno che tu non abbia bisogno di eseguire ulteriori operazioni
-  });
+function ottieniDefault(){
+  caricaDati(function(datiRicevuti) { // Passa 'datiRicevuti' come parametro
+    if (datiRicevuti.length > 0) {
+        for (var l = 0; l < datiRicevuti.length; l++) { // Inizializza l a 0
+            let Elemento = datiRicevuti[l];
+            let nomesrv = Elemento.nome;
+            let cellularesrv = Elemento.cellulare;
+            let giornisrv = Elemento.giorni;
+            let mesesrv = Elemento.mese;
+            let annosrv = Elemento.anno;
+            
+            if (annosrv === numero_anno) {
+                if (mesesrv === numero_mese + 1) {
+                    for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
+                        for (var a = 0; a < giornisrv.length; a++) { 
+                            if (giornisrv[a] === f) {
+                                document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
+                                var idBottone = "bottone" + f
+                                document.getElementById(idBottone).style.cursor = "not-allowed"
+                                document.getElementById(idBottone).disabled= true;
+                              }
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
 }
-
+ottieniDefault()
