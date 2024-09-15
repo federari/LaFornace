@@ -511,8 +511,6 @@ img {
 .linea-prenota{
     display: flex;
     margin-bottom: 10px;
-    margin-left: 550px;
-    margin-right: 550px;
     margin-bottom: 20px;
 }
 .prenota{
@@ -538,8 +536,8 @@ img {
     padding-inline: 0px;
 }
 .prenota-grid{
-    margin-bottom: 80px;
-    margin-top: 40px;
+    margin: 80px auto 40px;
+    max-width: 650px;
 }
 .mese{
     font-size: large;

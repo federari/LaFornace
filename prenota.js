@@ -7,6 +7,7 @@ var spananno = document.getElementById("anno");
 var datadioggi = new Date();
 var numero_mese = datadioggi.getMonth(); // Restituisce un numero da 0 a 11
 var numero_anno = datadioggi.getFullYear()
+var t = 0
 
 // Imposta il contenuto del div
 spanmese.innerHTML = mesi[numero_mese];
@@ -210,6 +211,7 @@ function prenota(g) {
       divToChange.style.backgroundColor = 'rgb(57, 54, 196)'; // Cambia da rosso a blu
         giorni[n] = g
         n++
+        t = 1
     }else{
       divToChange.style.backgroundColor = 'rgb(214, 56, 56)'; // Cambia da blu a rosso
       for( var i = 0; i < giorni.length; i++){ 
@@ -223,6 +225,11 @@ function prenota(g) {
 
 
 function invia(){
+  if(t === 0){
+    alert("Impossibile effettuare una prenotazione senza aver prima selezionato dei giorni")
+    return
+  }
+  t = 0
 
   const nome = prompt("Inserire un nome")
   if(nome === null){
