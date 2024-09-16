@@ -297,7 +297,46 @@ function caricaDati(callback) {
   });
 }
 
+
+var j = 0
+
+
+function titolo(titolo) {
+  var title= document.createElement("p");
+  var testo = document.createTextNode(titolo);
+  title.appendChild(testo);
+  title.classList.add('mese')
+  document.getElementById("div-prenotazioni" + j).appendChild(title);
+}
+function paragrafo(paragrafo) {
+  var paragraph= document.createElement("p");
+  var testo2 = document.createTextNode(paragrafo);
+  paragraph.appendChild(testo2);
+  paragraph.classList.add('mese')
+  document.getElementById("div-prenotazioni" + j).appendChild(paragraph);
+}
+function giornif(paragrafo2) {
+  var paragraph2= document.createElement("p");
+  var testo3 = document.createTextNode("Ha prenotato i giorni: " + paragrafo2);
+  paragraph2.appendChild(testo3);
+  paragraph2.classList.add('mese')
+  document.getElementById("div-prenotazioni" + j).appendChild(paragraph2);
+  j++
+}
+function div(){
+  var div = document.createElement("div")
+  div.classList.add("listing-item")
+  div.setAttribute("id", "div-prenotazioni" + j);
+  document.getElementById("main-prenotazioni").appendChild(div);
+}
+
+
 function ottieni() {
+  const password = "Password123"
+  if(prompt("inserisci la password")  != password){
+    alert("Password Errata")
+    return
+  }
   // Chiama la funzione per caricare e processare i dati
   caricaDati(function(datiRicevuti) { // Passa 'datiRicevuti' come parametro
       if (datiRicevuti.length > 0) {
@@ -320,6 +359,10 @@ function ottieni() {
                       }
                   }
               }
+              div()
+              titolo(nomesrv)
+              paragrafo(cellularesrv)
+              giornif(giornisrv)
           }
       }
   });
