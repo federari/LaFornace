@@ -9,10 +9,8 @@ var numero_mese = datadioggi.getMonth(); // Restituisce un numero da 0 a 11
 var numero_anno = datadioggi.getFullYear()
 var t = 0
 
-// Imposta il contenuto del div
-spanmese.innerHTML = mesi[numero_mese];
-spananno.innerHTML = numero_anno;
-document.getElementById("giorno31").style.display = "block"
+function bisestile(){
+  document.getElementById("giorno31").style.display = "block"
   document.getElementById("giorno30").style.display = "block"
   document.getElementById("giorno29").style.display = "block"
   if(numero_mese == 3){
@@ -27,9 +25,9 @@ document.getElementById("giorno31").style.display = "block"
     document.getElementById("giorno31").style.display = "none"
     document.getElementById("giorno30").style.display = "none"
     if(numero_anno%4 != 0){
-
-    } else if(numero_anno%100 != 0){
       document.getElementById("giorno29").style.display = "none"
+    } else if(numero_anno%100 != 0){
+      
     } else{
       if(numero_anno%400 == 0){
       } else{
@@ -37,6 +35,12 @@ document.getElementById("giorno31").style.display = "block"
       }
     }
   }
+}
+
+// Imposta il contenuto del div
+spanmese.innerHTML = mesi[numero_mese];
+spananno.innerHTML = numero_anno;
+bisestile()
 
 
 
@@ -55,31 +59,7 @@ function sinistraMese() {
     numero_mese = 11
   }
   spanmese.innerHTML = mesi[numero_mese];
-  document.getElementById("giorno31").style.display = "block"
-  document.getElementById("giorno30").style.display = "block"
-  document.getElementById("giorno29").style.display = "block"
-  if(numero_mese == 3){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 5){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 8){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 10){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 1){
-    document.getElementById("giorno31").style.display = "none"
-    document.getElementById("giorno30").style.display = "none"
-    if(numero_anno%4 != 0){
-      
-    } else if(numero_anno%100 != 0){
-      document.getElementById("giorno29").style.display = "none"
-    } else{
-      if(numero_anno%400 == 0){
-      } else{
-        document.getElementById("giorno29").style.display = "none"
-      }
-    }
-  }
+  bisestile()
   ottieniDefault()
 }
 function destraMese() {
@@ -94,31 +74,7 @@ function destraMese() {
     numero_mese = 0
   }
   spanmese.innerHTML = mesi[numero_mese];
-  document.getElementById("giorno31").style.display = "block"
-  document.getElementById("giorno30").style.display = "block"
-  document.getElementById("giorno29").style.display = "block"
-  if(numero_mese == 3){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 5){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 8){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 10){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 1){
-    document.getElementById("giorno31").style.display = "none"
-    document.getElementById("giorno30").style.display = "none"
-    if(numero_anno%4 != 0){
-      
-    } else if(numero_anno%100 != 0){
-      document.getElementById("giorno29").style.display = "none"
-    } else{
-      if(numero_anno%400 == 0){
-      } else{
-        document.getElementById("giorno29").style.display = "none"
-      }
-    }
-  }
+  bisestile()
   ottieniDefault()
 }
 
@@ -131,31 +87,7 @@ function sinistraAnno() {
   }
   numero_anno--
   spananno.innerHTML = numero_anno;
-  document.getElementById("giorno31").style.display = "block"
-  document.getElementById("giorno30").style.display = "block"
-  document.getElementById("giorno29").style.display = "block"
-  if(numero_mese == 3){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 5){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 8){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 10){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 1){
-    document.getElementById("giorno31").style.display = "none"
-    document.getElementById("giorno30").style.display = "none"
-    if(numero_anno%4 != 0){
-      
-    } else if(numero_anno%100 != 0){
-      document.getElementById("giorno29").style.display = "none"
-    } else{
-      if(numero_anno%400 == 0){
-      } else{
-        document.getElementById("giorno29").style.display = "none"
-      }
-    }
-  }
+  bisestile()
   ottieniDefault()
 }
 function destraAnno() {
@@ -168,31 +100,7 @@ function destraAnno() {
 
   numero_anno++
   spananno.innerHTML = numero_anno;
-  document.getElementById("giorno31").style.display = "block"
-  document.getElementById("giorno30").style.display = "block"
-  document.getElementById("giorno29").style.display = "block"
-  if(numero_mese == 3){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 5){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 8){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 10){
-    document.getElementById("giorno31").style.display = "none"
-  } else if(numero_mese == 1){
-    document.getElementById("giorno31").style.display = "none"
-    document.getElementById("giorno30").style.display = "none"
-    if(numero_anno%4 != 0){
-      
-    } else if(numero_anno%100 != 0){
-      document.getElementById("giorno29").style.display = "none"
-    } else{
-      if(numero_anno%400 == 0){
-      } else{
-        document.getElementById("giorno29").style.display = "none"
-      }
-    }
-  }
+  bisestile()
   ottieniDefault()
 }
 
