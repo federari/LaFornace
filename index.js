@@ -16,16 +16,7 @@ function myFunction() {
   }
 }
 
-var imageSources = ["foto/IMG_0234.jpg", "foto/IMG_0263.jpg", "foto/IMG_0238.jpg", "foto/IMG_0242.jpg", "foto/IMG_0244.jpg", "foto/IMG_0247.jpg", "foto/IMG_0249.jpg"]
 
-var index = 0;
-setInterval (function(){
-  if (index === imageSources.length) {
-    index = 0;
-  }
-  document.getElementById("center_image").src = imageSources[index];
-  index++;
-} , 8000);
 
 
 

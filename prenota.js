@@ -50,7 +50,7 @@ bisestile()
 function sinistraMese() {
   for(var h = 1; h < 31; h++){
     idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).style.cursor = "pointer"
     document.getElementById(idBottone2).disabled = false;
     document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
   }
@@ -65,7 +65,7 @@ function sinistraMese() {
 function destraMese() {
   for(var h = 1; h < 31; h++){
     idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).style.cursor = "pointer"
     document.getElementById(idBottone2).disabled = false;
     document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
   }
@@ -81,7 +81,7 @@ function destraMese() {
 function sinistraAnno() {
   for(var h = 1; h < 31; h++){
     idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).style.cursor = "pointer"
     document.getElementById(idBottone2).disabled = false;
     document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
   }
@@ -93,7 +93,7 @@ function sinistraAnno() {
 function destraAnno() {
   for(var h = 1; h < 31; h++){
     idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "allowed"
+    document.getElementById(idBottone2).style.cursor = "pointer"
     document.getElementById(idBottone2).disabled = false;
     document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
   }

@@ -432,11 +432,22 @@ img {
     padding-bottom: 400px; 
     margin: auto 0px;
 }
+@keyframes immaginiCentrali{
+    0% {opacity: 1;}
+    60% {opacity: 0;}
+    100% {opacity: 1;}
+}
+/*margin: 30px 0px 35px;*/
+
 .immagini_body{
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
     border-radius: 4px;
-    margin: 30px auto 35px;
     max-height: 600px;
+    position: relative;
+}
+.animazione_partita {
+    animation-name: immaginiCentrali;
+    animation-duration: 4s;
 }
 .cancella{
     padding: 10px;
