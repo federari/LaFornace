@@ -14,9 +14,9 @@ function delay(ms) {
 }
 
 var index = 0;
-var currentImage = 1; // Per tracciare quale immagine è visibile
-var fadeDuration = 2000; // Durata della dissolvenza in millisecondi
-var intervalDelay = 6000; // Tempo di visibilità dell'immagine tra i cambiamenti
+var currentImage = 1; // To track which image is visible
+var fadeDuration = 2000; // Duration of the fade in milliseconds
+var intervalDelay = 6000; // Time the image is visible between changes
 
 async function fadeImages() {
   var image1 = document.getElementById("image1");
@@ -27,24 +27,30 @@ async function fadeImages() {
     var currentImgElement = currentImage === 1 ? image1 : image2;
     var nextImgElement = currentImage === 1 ? image2 : image1;
 
-    // Imposta l'immagine successiva
+    // Set the next image, but wait for it to load first
     nextImgElement.src = imageSources[nextIndex];
+    await new Promise((resolve) => {
+      nextImgElement.onload = resolve;
+    });
 
-    // Inizia la dissolvenza incrociata
+    // Start crossfade
+    currentImgElement.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+    nextImgElement.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+
     currentImgElement.style.opacity = 0;
     nextImgElement.style.opacity = 1;
 
-    // Attendi che la transizione sia completa
+    // Wait for the fade to complete
     await delay(fadeDuration);
 
-    // Aggiorna l'indice e l'immagine corrente
+    // Update the index and current image
     index = nextIndex;
     currentImage = currentImage === 1 ? 2 : 1;
 
-    // Aspetta prima di cambiare di nuovo immagine
+    // Wait before changing the image again
     await delay(intervalDelay);
   }
 }
 
-// Avvia lo slideshow
+// Start the slideshow
 fadeImages();
