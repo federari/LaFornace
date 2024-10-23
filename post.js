@@ -6,6 +6,10 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
     const password = document.getElementById('password').value;
     const giornata = new Date();
     const giornataformatt = giornata.getFullYear()*1000000 + giornata.getMonth()*10000 + giornata.getDate()*100 + giornata.getHours();
+    const preview = document.getElementById('preview');
+    const progressContainer = document.getElementById('progressContainer');
+    const progressBar = document.getElementById('progressBar');
+    const uploadButton = document.getElementById('uploadButton');
     
     const fileInput = document.getElementById('immagine');
     const file = fileInput.files[0];
@@ -14,6 +18,18 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
         alert('Per favore seleziona un\'immagine');
         return;
     }
+
+
+    fileInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                preview.innerHTML = `<img src="${event.target.result}" class="preview" alt="Anteprima immagine">`;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
 
     // Crea un form data per caricare l'immagine
     const formData = new FormData();

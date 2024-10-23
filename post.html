@@ -131,7 +131,7 @@
 
 <div class="main full">
     <span class="titolo titolo">CREA UN ARTICOLO</span>
-    <form id="uploadForm">
+    <form id="uploadForm" enctype="multipart/form-data">
       <div class="listing-item">
         <label for="titolo">Titolo:</label>
         <input type="text" id="titolo" name="titolo" required>
@@ -146,7 +146,11 @@
       </div><br>
       <div class="listing-item">
         <label for="immagine">Immagine URL:</label>
-        <input type="file" id="immagine" accept="image/*">
+        <input type="file" id="immagine" name="immagine" accept="image/*">
+        <div class="preview" id="preview"></div>
+        <div class="progress" id="progressContainer" style="display:none;">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
       </div><br>
       <div class="listing-item">
         <label for="password">Password:</label>
