@@ -585,3 +585,10 @@ img {
     object-fit: cover; /* Assicurati che l'immagine si adatti al contenitore */
     transition: opacity 2s; /* Applica la transizione dell'opacità */
 }
+.center_images {
+    max-width: 1280px;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
