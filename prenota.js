@@ -163,7 +163,7 @@ function invia(){
       anno: numero_anno
   };
 
-    fetch('https://serverlafornace.adaptable.app/prenota', {
+    fetch('https://lafornaceserver.onrender.com/prenota', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
@@ -186,7 +186,7 @@ function invia(){
 function loadJSON(callback) {
   const xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
-  xobj.open('GET', 'https://serverlafornace.adaptable.app/prenotazioni', true); // URL del tuo server su Adaptable
+  xobj.open('GET', 'https://lafornaceserver.onrender.com/prenotazioni', true); // URL del tuo server su Adaptable
   xobj.onreadystatechange = function () {
       if (xobj.readyState == 4 && xobj.status == 200) { // Cambiato 'status' in 200 senza virgolette
           callback(JSON.parse(xobj.responseText));

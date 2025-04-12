@@ -36,7 +36,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
     formData.append('immagine', file);
 
     // Prima carica l'immagine al server
-    fetch('https://serverlafornace.adaptable.app/uploadImage', {
+    fetch('https://lafornaceserver.onrender.com/uploadImage', {
         method: 'POST',
         body: formData
     })
@@ -52,7 +52,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
             };
 
             // Invia i dati dell'articolo insieme all'URL dell'immagine
-            return fetch('https://serverlafornace.adaptable.app/upload', {
+            return fetch('https://lafornaceserver.onrender.com/upload', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
