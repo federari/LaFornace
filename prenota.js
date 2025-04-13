@@ -117,16 +117,16 @@ function prenota(g) {
     // Cambia il colore di background del div selezionato
     if(style.backgroundColor == "rgb(214, 56, 56)"){
       divToChange.style.backgroundColor = 'rgb(57, 54, 196)'; // Cambia da rosso a blu
-        giorni[n] = g
-        n++
-        t = 1
+      giorni.push({ giorno: g, mese: numero_mese + 1, anno: numero_anno });
+      t = 1;
     }else{
       divToChange.style.backgroundColor = 'rgb(214, 56, 56)'; // Cambia da blu a rosso
-      for( var i = 0; i < giorni.length; i++){ 
-        if ( giorni[i] === g) {
-          giorni.splice(i, 1); 
+      for (var i = 0; i < giorni.length; i++) {
+        if (giorni[i].giorno === g && giorni[i].mese === numero_mese + 1 && giorni[i].anno === numero_anno) {
+          giorni.splice(i, 1);
+          break;
         }
-     }
+      }      
      n--
     }
 };
@@ -260,7 +260,7 @@ function ottieni() {
                   if (mesesrv === numero_mese + 1) {
                       for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
                           for (var a = 0; a < giornisrv.length; a++) { 
-                              if (giornisrv[a] === f) {
+                            if (giornisrv[a].giorno === f && giornisrv[a].mese === numero_mese + 1 && giornisrv[a].anno === numero_anno){
                                   document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
                               }
                           }
@@ -291,7 +291,7 @@ function ottieniDefault(){
                 if (mesesrv === numero_mese + 1) {
                     for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
                         for (var a = 0; a < giornisrv.length; a++) { 
-                            if (giornisrv[a] === f) {
+                          if (giornisrv[a].giorno === f && giornisrv[a].mese === numero_mese + 1 && giornisrv[a].anno === numero_anno){
                                 document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
                                 var idBottone = "bottone" + f
                                 document.getElementById(idBottone).style.cursor = "not-allowed"
