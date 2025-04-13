@@ -288,7 +288,7 @@ function ottieniDefault() {
 
           if (
             giornoSingolo.anno === numero_anno &&
-            giornoSingolo.mese === numero_mese &&
+            giornoSingolo.mese === numero_mese + 1 &&
             giornoSingolo.giorno >= 1 &&
             giornoSingolo.giorno <= 31
           ) {
