@@ -239,42 +239,6 @@ function div(){
 }
 
 
-function ottieni() {
-  const password = "Password123"
-  if(prompt("inserisci la password")  != password){
-    alert("Password Errata")
-    return
-  }
-  // Chiama la funzione per caricare e processare i dati
-  caricaDati(function(datiRicevuti) { // Passa 'datiRicevuti' come parametro
-      if (datiRicevuti.length > 0) {
-          for (var l = 0; l < datiRicevuti.length; l++) { // Inizializza l a 0
-              let Elemento = datiRicevuti[l];
-              let nomesrv = Elemento.nome;
-              let cellularesrv = Elemento.cellulare;
-              let giornisrv = Elemento.giorni;
-              let mesesrv = Elemento.mese;
-              let annosrv = Elemento.anno;
-              
-              if (annosrv === numero_anno) {
-                  if (mesesrv === numero_mese + 1) {
-                      for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
-                          for (var a = 0; a < giornisrv.length; a++) { 
-                            if (giornisrv[a].giorno === f && giornisrv[a].mese === numero_mese + 1 && giornisrv[a].anno === numero_anno){
-                                  document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
-                              }
-                          }
-                      }
-                  }
-              }
-              div()
-              titolo(nomesrv)
-              paragrafo(cellularesrv)
-              giornif(giornisrv)
-          }
-      }
-  });
-}
 
 function ottieniDefault() {
   caricaDati(function(datiRicevuti) {

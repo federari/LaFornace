@@ -48,12 +48,6 @@ bisestile()
 
 
 function sinistraMese() {
-  for(var h = 1; h < 31; h++){
-    idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "pointer"
-    document.getElementById(idBottone2).disabled = false;
-    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
-  }
   numero_mese--
   if(numero_mese < 0){
     numero_mese = 11
@@ -63,12 +57,6 @@ function sinistraMese() {
   ottieniDefault()
 }
 function destraMese() {
-  for(var h = 1; h < 31; h++){
-    idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "pointer"
-    document.getElementById(idBottone2).disabled = false;
-    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
-  }
   numero_mese++
   if(numero_mese > 11){
     numero_mese = 0
@@ -79,33 +67,18 @@ function destraMese() {
 }
 
 function sinistraAnno() {
-  for(var h = 1; h < 31; h++){
-    idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "pointer"
-    document.getElementById(idBottone2).disabled = false;
-    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
-  }
   numero_anno--
   spananno.innerHTML = numero_anno;
   bisestile()
   ottieniDefault()
 }
 function destraAnno() {
-  for(var h = 1; h < 31; h++){
-    idBottone2 = "bottone" + h
-    document.getElementById(idBottone2).style.cursor = "pointer"
-    document.getElementById(idBottone2).disabled = false;
-    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
-  }
 
   numero_anno++
   spananno.innerHTML = numero_anno;
   bisestile()
   ottieniDefault()
 }
-
-
-  // Aggiungi un event listener per ogni bottone
 
 
 
@@ -186,7 +159,7 @@ function ottieni() {
                   if (mesesrv === numero_mese + 1) {
                       for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
                           for (var a = 0; a < giornisrv.length; a++) { 
-                            if (giornisrv[a].giorno === f && giornisrv[a].mese === numero_mese + 1 && giornisrv[a].anno === numero_anno){
+                              if (giornisrv[a] === f) {
                                   document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
                               }
                           }
@@ -231,5 +204,4 @@ function ottieniDefault() {
     }
   });
 }
-
 ottieniDefault()
