@@ -184,8 +184,8 @@ function ottieniDefault() {
 
         for (var a = 0; a < giornisrv.length; a++) {
           let giornoSingolo = giornisrv[a];
-          if (giornoElem) {
-            giornoElem.style.backgroundColor = "rgb(214, 56, 56)";
+          for(var p = 1; p <= 31; p++){
+            document.getElementById(p).style.backgroundColor = "rgb(214, 56, 56)";
           }
 
           if (
