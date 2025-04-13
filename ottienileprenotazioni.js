@@ -177,7 +177,9 @@ function ottieni() {
 
 function ottieniDefault() {
   for(var p = 1; p <= 31; p++){
-    document.getElementById(p).style.backgroundColor = "rgb(214, 56, 56)";
+    if(document.getElementById(p)){
+      document.getElementById(p).style.backgroundColor = "rgb(214, 56, 56)";
+    }
   }
   caricaDati(function(datiRicevuti) {
     if (datiRicevuti.length > 0) {
