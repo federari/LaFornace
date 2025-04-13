@@ -48,6 +48,12 @@ bisestile()
 
 
 function sinistraMese() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "pointer"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
   numero_mese--
   if(numero_mese < 0){
     numero_mese = 11
@@ -57,6 +63,12 @@ function sinistraMese() {
   ottieniDefault()
 }
 function destraMese() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "pointer"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
   numero_mese++
   if(numero_mese > 11){
     numero_mese = 0
@@ -67,12 +79,24 @@ function destraMese() {
 }
 
 function sinistraAnno() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "pointer"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
   numero_anno--
   spananno.innerHTML = numero_anno;
   bisestile()
   ottieniDefault()
 }
 function destraAnno() {
+  for(var h = 1; h < 31; h++){
+    idBottone2 = "bottone" + h
+    document.getElementById(idBottone2).style.cursor = "pointer"
+    document.getElementById(idBottone2).disabled = false;
+    document.getElementById(h).style.backgroundColor = "rgb(214, 56, 56)"
+  }
 
   numero_anno++
   spananno.innerHTML = numero_anno;
@@ -82,83 +106,9 @@ function destraAnno() {
 
 
   // Aggiungi un event listener per ogni bottone
-function prenota(g) {
 
 
-  // Seleziona il div con la classe "prenota-bottom" all'interno del bottone cliccato
-  const divToChange = document.getElementById(g);
 
-    // Ottieni lo stile computato del div
-    const style = getComputedStyle(divToChange);
-    // Cambia il colore di background del div selezionato
-    if(style.backgroundColor == "rgb(214, 56, 56)"){
-      divToChange.style.backgroundColor = 'rgb(57, 54, 196)'; // Cambia da rosso a blu
-        giorni[n] = g
-        n++
-        t = 1
-    }else{
-      divToChange.style.backgroundColor = 'rgb(214, 56, 56)'; // Cambia da blu a rosso
-      for( var i = 0; i < giorni.length; i++){ 
-        if ( giorni[i] === g) {
-          giorni.splice(i, 1); 
-        }
-     }
-     n--
-    }
-};
-
-
-function invia(){
-  if(t === 0){
-    alert("Impossibile effettuare una prenotazione senza aver prima selezionato dei giorni")
-    return
-  }
-  t = 0
-
-  const nome = prompt("Inserire un nome")
-  if(nome === null){
-    alert("Operazione Annullata")
-    return
-  } else if(nome === ""){
-    alert("Fornire un nome")
-    return
-  }
-  const cellulare = prompt("inserire un numero di telefono")
-  if(cellulare === null){
-    alert("Operazione Annullata")
-    return
-  } else if(cellulare === ""){
-    alert("Fornire un numero di telefono")
-    return
-  }
-    const data = {
-      nome: nome,
-      cellulare: cellulare,
-      giorni: giorni,
-      mese: numero_mese + 1,
-      anno: numero_anno
-  };
-
-    fetch('https://lafornaceserver.onrender.com/prenota', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(data => {
-      if (data.success) {
-          alert('Prenotazione avvenuta con successo!');
-      } else {
-          alert('Errore nel caricamento della prenotazione: ' + data.error + "Chiama l'assistenza");
-      }
-  })
-  .catch((error) => {
-      console.error('Errore:', error);
-      alert("Errore nel caricamento della prenotazione, Chiama l'assistenza");
-  });
-};
 function loadJSON(callback) {
   const xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
@@ -236,7 +186,7 @@ function ottieni() {
                   if (mesesrv === numero_mese + 1) {
                       for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
                           for (var a = 0; a < giornisrv.length; a++) { 
-                              if (giornisrv[a] === f) {
+                            if (giornisrv[a].giorno === f && giornisrv[a].mese === numero_mese + 1 && giornisrv[a].anno === numero_anno){
                                   document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
                               }
                           }
@@ -252,33 +202,34 @@ function ottieni() {
   });
 }
 
-function ottieniDefault(){
-  caricaDati(function(datiRicevuti) { // Passa 'datiRicevuti' come parametro
+function ottieniDefault() {
+  caricaDati(function(datiRicevuti) {
     if (datiRicevuti.length > 0) {
-        for (var l = 0; l < datiRicevuti.length; l++) { // Inizializza l a 0
-            let Elemento = datiRicevuti[l];
-            let nomesrv = Elemento.nome;
-            let cellularesrv = Elemento.cellulare;
-            let giornisrv = Elemento.giorni;
-            let mesesrv = Elemento.mese;
-            let annosrv = Elemento.anno;
-            
-            if (annosrv === numero_anno) {
-                if (mesesrv === numero_mese + 1) {
-                    for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
-                        for (var a = 0; a < giornisrv.length; a++) { 
-                            if (giornisrv[a] === f) {
-                                document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
-                                var idBottone = "bottone" + f
-                                document.getElementById(idBottone).style.cursor = "not-allowed"
-                                document.getElementById(idBottone).disabled= true;
-                              }
-                        }
-                    }
-                }
+      for (var l = 0; l < datiRicevuti.length; l++) {
+        let Elemento = datiRicevuti[l];
+        let giornisrv = Elemento.giorni;
+
+        for (var a = 0; a < giornisrv.length; a++) {
+          let giornoSingolo = giornisrv[a];
+
+          if (
+            giornoSingolo.anno === numero_anno &&
+            giornoSingolo.mese === numero_mese + 1 &&
+            giornoSingolo.giorno >= 1 &&
+            giornoSingolo.giorno <= 31
+          ) {
+            let idGiorno = giornoSingolo.giorno;
+
+            const giornoElem = document.getElementById(idGiorno);
+
+            if (giornoElem) {
+              giornoElem.style.backgroundColor = "rgb(0 43 57)";
             }
+          }
         }
+      }
     }
-});
+  });
 }
+
 ottieniDefault()
