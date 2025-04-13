@@ -176,6 +176,9 @@ function ottieni() {
 }
 
 function ottieniDefault() {
+  for(var p = 1; p <= 31; p++){
+    document.getElementById(p).style.backgroundColor = "rgb(214, 56, 56)";
+  }
   caricaDati(function(datiRicevuti) {
     if (datiRicevuti.length > 0) {
       for (var l = 0; l < datiRicevuti.length; l++) {
@@ -184,9 +187,6 @@ function ottieniDefault() {
 
         for (var a = 0; a < giornisrv.length; a++) {
           let giornoSingolo = giornisrv[a];
-          for(var p = 1; p <= 31; p++){
-            document.getElementById(p).style.backgroundColor = "rgb(214, 56, 56)";
-          }
 
           if (
             giornoSingolo.anno === numero_anno &&
