@@ -184,6 +184,9 @@ function ottieniDefault() {
 
         for (var a = 0; a < giornisrv.length; a++) {
           let giornoSingolo = giornisrv[a];
+          if (giornoElem) {
+            giornoElem.style.backgroundColor = "rgb(214, 56, 56)";
+          }
 
           if (
             giornoSingolo.anno === numero_anno &&
@@ -196,7 +199,7 @@ function ottieniDefault() {
             const giornoElem = document.getElementById(idGiorno);
 
             if (giornoElem) {
-              giornoElem.style.backgroundColor = "rgb(0 43 57)";
+              giornoElem.style.backgroundColor = "rgb(0, 43, 57)";
             }
           }
         }
