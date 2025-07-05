@@ -1,0 +1,5 @@
+[[redirects]]
+    from = "https://lafornace.netlify.app/*"
+    to = "https://lafornace.org"
+    status = 301
+    force = true
