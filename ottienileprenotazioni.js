@@ -123,13 +123,15 @@ function paragrafo(paragrafo) {
   document.getElementById("div-prenotazioni" + j).appendChild(paragraph);
 }
 function giornif(paragrafo2) {
-  var paragraph2= document.createElement("p");
-  var testo3 = document.createTextNode("Ha prenotato i giorni: " + paragrafo2);
+  let giorniFormattati = paragrafo2.map(g => g.giorno).join(", ");
+  let paragraph2 = document.createElement("p");
+  let testo3 = document.createTextNode("Ha prenotato i giorni: " + giorniFormattati);
   paragraph2.appendChild(testo3);
-  paragraph2.classList.add('mese')
+  paragraph2.classList.add('mese');
   document.getElementById("div-prenotazioni" + j).appendChild(paragraph2);
-  j++
+  j++;
 }
+
 function div(){
   var div = document.createElement("div")
   div.classList.add("listing-item")
@@ -155,17 +157,19 @@ function ottieni() {
               let mesesrv = Elemento.mese;
               let annosrv = Elemento.anno;
               
-              if (annosrv === numero_anno) {
-                  if (mesesrv === numero_mese + 1) {
-                      for (var f = 1; f <= 31; f++) { // Inizializzazione corretta del ciclo (f parte da 1)
-                          for (var a = 0; a < giornisrv.length; a++) { 
-                              if (giornisrv[a] === f) {
-                                  document.getElementById(f).style.backgroundColor = "rgb(0 43 57)";
-                              }
+              if (annosrv === numero_anno && mesesrv === numero_mese + 1) {
+                  for (var a = 0; a < giornisrv.length; a++) { 
+                      let giornoSingolo = giornisrv[a];
+                      if (giornoSingolo.mese === numero_mese + 1 && giornoSingolo.anno === numero_anno) {
+                          let idGiorno = giornoSingolo.giorno;
+                          let cell = document.getElementById(idGiorno);
+                          if (cell) {
+                              cell.style.backgroundColor = "rgb(0 43 57)";
                           }
                       }
                   }
               }
+
               div()
               titolo(nomesrv)
               paragrafo(cellularesrv)
